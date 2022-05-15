@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
   background-color: rgb(222, 186, 131);
-  max-width: 1920px;
-  max-height: 1080px;
 }

@@ -1,5 +1,4 @@
-.Chessboard {
-  background-color: rgb(129, 83, 15);
-  width: 20px;
-  height: 50px;
+.Chessboard-container {
+  background: silver;
+  width: 50px;
 }

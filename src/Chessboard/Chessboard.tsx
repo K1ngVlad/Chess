@@ -1,20 +1,23 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
+import Cell from './Cell/Cell';
 import './Chessboard.css';
 
 const Chessboard: FC = () => {
-  let divStyle = {
-    height: window.innerHeight,
-    width: window.innerHeight,
-  };
-
-  useEffect(() => {
-    divStyle.height = window.innerHeight;
-    divStyle.width = window.innerHeight;
-  }, [window.innerHeight]);
+  const arr = [];
+  for (let i = 1; i <= 8; i++) {
+    // for (let j = 1; j <= 8; j++) {
+    arr.push(1);
+    // }
+  }
+  console.log(arr);
 
   return (
-    <div style={divStyle} className="Chessboard-container">
-      <div className="Chessboard"></div>
+    <div className="Chessboard-container">
+      {arr.map((e, i) => {
+        if (i) {
+          return <Cell key={i} />;
+        }
+      })}
     </div>
   );
 };

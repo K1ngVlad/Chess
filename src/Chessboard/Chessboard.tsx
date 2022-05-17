@@ -1,20 +1,20 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import './Chessboard.css';
+import useTypedSelector from './hooks/UseTypedSelector';
 import Row from './Row/Row';
 
 const Chessboard: FC = () => {
-  const arr = [];
-  for (let i = 1; i <= 8; i++) {
-    arr.push(1);
-  }
-  console.log(arr);
+  const map = useTypedSelector((state) => state.map.map);
+  // const arr = [];
+  // for (let i = 1; i <= 8; i++) {
+  //   arr.push(1);
+  // }
+  // console.log(arr);
 
   return (
     <div className="Chessboard">
-      {arr.map((e, i) => {
-        if (e) {
-          return <Row index={i} key={i} />;
-        }
+      {map.map((e, i) => {
+        return <Row index={i} row={e} key={i} />;
       })}
     </div>
   );

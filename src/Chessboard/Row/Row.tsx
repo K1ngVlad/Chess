@@ -4,19 +4,20 @@ import './Row.css';
 
 interface RowProps {
   index: number;
+  row: any[];
 }
 
 const Row: FC<RowProps> = (props) => {
-  const arr = [];
-  for (let i = 1; i <= 8; i++) {
-    arr.push(1);
-  }
+  // const arr = [];
+  // for (let i = 1; i <= 8; i++) {
+  //   arr.push(1);
+  // }
   return (
     <div className="Row">
-      {arr.map((e, i) => {
-        if (e) {
-          return <Cell RowIndex={props.index} ColumnIndex={i} key={i} />;
-        }
+      {props.row.map((e, i) => {
+        return (
+          <Cell rowIndex={props.index} type={e.type} columnIndex={i} key={i} />
+        );
       })}
     </div>
   );

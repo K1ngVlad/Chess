@@ -16,7 +16,13 @@ const Row: FC<RowProps> = (props) => {
     <div className="Row">
       {props.row.map((e, i) => {
         return (
-          <Cell rowIndex={props.index} type={e.type} columnIndex={i} key={i} />
+          <Cell
+            rowIndex={props.index}
+            type={e.type}
+            color={e.color}
+            columnIndex={i}
+            key={i}
+          />
         );
       })}
     </div>
